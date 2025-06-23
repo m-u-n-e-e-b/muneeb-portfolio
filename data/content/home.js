@@ -1,16 +1,4 @@
-type Skill = {
-  title: string,
-  icon: string,
-  style?: object
-};
-type Testimonial = {
-  quote: string,
-  name: string,
-  job: string
-};
-
-
-export const skills: Skill[] = [
+export const skills = [
   {
     title: "HTML",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
@@ -62,7 +50,7 @@ export const skills: Skill[] = [
   },
 ];
 
-export const testimonials: Testimonial[] = [
+export const testimonials = [
   {
     quote:
       "The communication throughout the project was spot on and the genre of design was carried out well.",

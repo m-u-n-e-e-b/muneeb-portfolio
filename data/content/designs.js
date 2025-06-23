@@ -1,10 +1,4 @@
-type Design = {
-  label: string,
-  img: string,
-  link: string
-}
-
-export const designs: Design[] = [
+export const designs = [
   {
     label: "Mobile Shopping App",
     img: "/static/designs/mobile-shopping-app.jpg",

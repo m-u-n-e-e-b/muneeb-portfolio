@@ -1,12 +1,12 @@
-export const kebabCase = (str: string) =>
+export const kebabCase = (str) =>
   str
     .replace(/([a-z])([A-Z])/g, "$1-$2")
     .replace(/[\s_]+/g, "-")
     .toLowerCase();
 
-export const kebabArray = (arr: any[]) => arr.map((item) => kebabCase(item));
+export const kebabArray = (arr) => arr.map((item) => kebabCase(item));
 
-export const randomNumberText = (finalNum: string, setNumber) => {
+export const randomNumberText = (finalNum, setNumber) => {
   let count = 0;
   let newNum = "";
   const interval = setInterval(() => {
@@ -18,7 +18,6 @@ export const randomNumberText = (finalNum: string, setNumber) => {
     newNum = "";
     if (count === 20) {
       clearInterval(interval);
-
       setNumber("404");
     }
   }, 80);

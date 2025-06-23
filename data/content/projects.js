@@ -1,7 +1,6 @@
-import { kebabCase, kebabArray } from "@/utils/utils";
-import { Project } from "types";
+import { kebabCase } from "@/utils/utils";
 
-const projects: Project[] = [
+const projects = [
   {
     id: 0,
     title: "Emax European Bikes",
@@ -47,7 +46,7 @@ const projects: Project[] = [
     title: "Animal Products",
     desc: "Find the best products for your pets.",
     img: "/static/projects/dogs.png",
-    link : "https://www.figma.com/proto/4mDOblvJT9h5RCCxgsOSJ3/Animal-Products-UI-UX--Community-?node-id=2-170&p=f&t=dBIbeJL2WSfqoZcs-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
+    link: "https://www.figma.com/proto/4mDOblvJT9h5RCCxgsOSJ3/Animal-Products-UI-UX--Community-?node-id=2-170&p=f&t=dBIbeJL2WSfqoZcs-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
     tags: ["Rust", "CLI", "Game"],
   },
   {
@@ -60,14 +59,16 @@ const projects: Project[] = [
   },
 ];
 
-export const allTags = []
+export const allTags = [];
 
 projects.forEach((project) => {
-  project.tags.forEach((tag) => !allTags.includes(tag) && allTags.push(tag))
+  project.tags.forEach((tag) => {
+    if (!allTags.includes(tag)) {
+      allTags.push(tag);
+    }
+  });
 });
 
-export const allKebabTags = allTags.map(tag => (
-  kebabCase(tag)
-))
+export const allKebabTags = allTags.map((tag) => kebabCase(tag));
 
-export default projects
+export default projects;

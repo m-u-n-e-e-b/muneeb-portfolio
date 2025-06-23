@@ -1,13 +1,11 @@
 import React from "react";
 
-type HeadingProps = {
-  tag?: string;
-};
-
-function Heading({ tag }: HeadingProps) {
+function Heading({ tag }) {
   return (
     <div
-      className={`${tag ? "pt-10 pb-4 sm:pt-24 sm:pb-20" : "py-12 sm:py-20"} w-full text-center relative`}
+      className={`${
+        tag ? "pt-10 pb-4 sm:pt-24 sm:pb-20" : "py-12 sm:py-20"
+      } w-full text-center relative`}
     >
       {tag ? (
         <>
@@ -16,6 +14,7 @@ function Heading({ tag }: HeadingProps) {
             <img
               className="sqD w-8 sm:w-10 -top-6 -right-2 sm:-right-8 sm:-top-8 absolute"
               src="/static/doodles/hero/code.svg"
+              alt="Code doodle"
             />
           </h1>
         </>
@@ -25,14 +24,14 @@ function Heading({ tag }: HeadingProps) {
           <img
             className="sqD w-10 -top-8 -right-8 absolute"
             src="/static/doodles/hero/code.svg"
+            alt="Code doodle"
           />
         </h1>
       )}
       {!tag && (
         <p className="text-fun-gray text-xl sm:text-2xl max-w-3xl m-auto">
-          I've built cool apps and websites using anything from HTML to React
-          . Here are some of my favorite projects over the course
-          of my journey.
+          I've built cool apps and websites using anything from HTML to React.
+          Here are some of my favorite projects over the course of my journey.
         </p>
       )}
     </div>
