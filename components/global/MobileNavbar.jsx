@@ -1,30 +1,33 @@
 import { useEffect, useState } from "react";
-
 import Link from "next/link";
-import {routes} from "@/data/global.js";
+import { routes } from "@/data/global.js";
 
 export default function MobileNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
-    isMenuOpen,
-    {
-      enterDelay: 20,
-      exitDelay: 300,
-    }
-  );
+  const [isMenuMounted, setIsMenuMounted] = useState(false);
+  const [isMenuRendered, setIsMenuRendered] = useState(false);
 
   function toggleMenu() {
     if (isMenuOpen) {
-      setIsMenuOpen(false);
-      document.body.style.overflow = "";
+      // Closing animation
+      setIsMenuRendered(false);
+      setTimeout(() => {
+        setIsMenuMounted(false);
+        document.body.style.overflow = "";
+      }, 300);
     } else {
-      setIsMenuOpen(true);
-      document.body.style.overflow = "hidden";
+      // Opening animation
+      setIsMenuMounted(true);
+      setTimeout(() => {
+        setIsMenuRendered(true);
+        document.body.style.overflow = "hidden";
+      }, 20);
     }
+    setIsMenuOpen(!isMenuOpen);
   }
 
   useEffect(() => {
-    return function cleanup() {
+    return () => {
       document.body.style.overflow = "";
     };
   }, []);
@@ -32,7 +35,9 @@ export default function MobileNavbar() {
   return (
     <nav>
       <div
-        className={`w-full justify-between flex items-center ${isMenuRendered && 'bg-bg'} p-5`}
+        className={`w-full justify-between flex items-center ${
+          isMenuRendered && "bg-bg"
+        } p-5`}
         style={{ zIndex: 101 }}
       >
         <li className="list-none font-bold text-lg">
@@ -56,27 +61,28 @@ export default function MobileNavbar() {
       </div>
       {isMenuMounted && (
         <ul
-          className={`menu flex flex-col absolute bg-bg
-            ${isMenuRendered && "menuRendered"}`}
+          className={`menu flex flex-col absolute bg-bg ${
+            isMenuRendered && "menuRendered"
+          }`}
         >
-          {routes.map((item, index) => {
-            return (
-              <li
-                className="border-b border-gray-900 text-gray-100 text-sm font-semibold"
-                style={{ transitionDelay: `${150 + index * 25}ms` }}
-              >
-                <Link href={item.path}>
-                  <a className="flex w-auto pb-4">{item.title}</a>
-                </Link>
-              </li>
-            );
-          })}
+          {routes.map((item, index) => (
+            <li
+              key={index}
+              className="border-b border-gray-900 text-gray-100 text-sm font-semibold"
+              style={{ transitionDelay: `${150 + index * 25}ms` }}
+            >
+              <Link href={item.path}>
+                <a className="flex w-auto pb-4">{item.title}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
       )}
     </nav>
   );
 }
 
+// Menu Icon Component
 function MenuIcon(props) {
   return (
     <svg
@@ -105,6 +111,7 @@ function MenuIcon(props) {
   );
 }
 
+// Cross Icon Component
 function CrossIcon(props) {
   return (
     <svg
