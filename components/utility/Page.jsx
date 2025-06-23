@@ -1,16 +1,21 @@
-import Footer from "../global/Footer";
+import React from "react";
 import Head from "next/head";
-import MobileNavbar from "../global/MobileNavbar";
 import Navbar from "../global/Navbar";
-import React, { ReactChildren } from "react";
+import MobileNavbar from "../global/MobileNavbar";
+import Footer from "../global/Footer";
 
-function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
-  const pageTitle = `${
+/**
+ * @param {Object} props
+ * @param {string} props.currentPage
+ * @param {{ title?: string, desc: string }} props.meta
+ * @param {JSX.Element | JSX.Element[]} props.children
+ */
+function Page({ currentPage, meta: { title, desc }, children }) {
+  const pageTitle =
     currentPage === "Home"
       ? "Muneeb - Web Developer"
-      : `${currentPage} - Muneeb.M`
-  }`;
-  console.log(currentPage);
+      : `${currentPage} - Muneeb.M`;
+
   return (
     <div
       className="w-full m-auto flex flex-col items-center justify-center min-h-screen opening-box-animate-paddin text-white overflow-hidden md:overflow-visible"
@@ -52,6 +57,7 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
         <meta property="twitter:url" content="https://braydentw.io/" />
         <meta property="twitter:title" content={pageTitle} />
         <meta property="twitter:description" content={desc} />
+
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
@@ -64,7 +70,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KC3CN7V');`,
           }}
-        ></script>
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -78,12 +84,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </Head>
+
       <noscript
         dangerouslySetInnerHTML={{
           __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC3CN7V"
 height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         }}
-      ></noscript>
+      />
 
       <main className="p-5 w-full flex-1 text-center">
         <div className="hidden sm:block z-100">
@@ -100,12 +107,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
 }
 
 export default Page;
-
-type PageProps = {
-  currentPage: string;
-  meta: {
-    title?: string;
-    desc: string;
-  };
-  children?: JSX.Element | JSX.Element[];
-};
