@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
-import {routes} from "@/data/global";
+import {routes} from "@/data/global.js";
 import useDelayedRender from "use-delayed-render";
 
 export default function MobileNavbar() {

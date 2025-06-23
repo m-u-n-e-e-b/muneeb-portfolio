@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import React from "react";
-import { footer } from "@/data/global";
+import { footer } from "@/data/global.js";
 import Image from "next/image";
 
 function Footer() {

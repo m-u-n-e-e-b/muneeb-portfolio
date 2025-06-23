@@ -1,10 +1,10 @@
-import CTA from "@/components/home/CTA";
-import Hero from "@/components/home/Hero";
-import Page from "@/components/utility/Page";
+import CTA from "@/components/home/CTA.jsx";
+import Hero from "@/components/home/Hero.jsx"
+import Page from "@/components/utility/Page.jsx";
 // import Posts from "@/components/home/Posts";
-import Projects from "@/components/home/Projects";
-import Skills from "@/components/home/Skills";
-import Testimonials from "@/components/home/Testimonials";
+import Projects from "@/components/home/Projects.jsx";
+import Skills from "@/components/home/Skills.jsx";
+import Testimonials from "@/components/home/Testimonials.jsx";
 // import { allPosts } from "contentlayer/generated";
 // import { GetStaticProps } from "next";
 

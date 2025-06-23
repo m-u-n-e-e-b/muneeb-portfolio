@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import SectionTitle from "../global/SectionTitle";
-import projects from "@/data/content/projects";
+import SectionTitle from "../global/SectionTitle.jsx";
+import projects from "@/data/content/projects.js";
 
 import ProjectCard from "../projects/ProjectCard";
 

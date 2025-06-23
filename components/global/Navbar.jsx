@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { routes } from "@/data/global";
+import { routes } from "@/data/global.js";
 
 function Navbar({ currentPage }) {
   return (

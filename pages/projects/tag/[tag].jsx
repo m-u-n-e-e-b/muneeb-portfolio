@@ -1,9 +1,9 @@
-import Page from "components/utility/Page";
-import { allKebabTags, allTags } from "@/data/content/projects";
-import projects from "@/data/content/projects";
-import { kebabCase, kebabArray } from "@/utils/utils";
-import Projects from "components/projects/Projects";
-import Heading from "components/projects/Heading";
+import Page from "components/utility/Page.jsx";
+import { allKebabTags, allTags } from "@/data/content/projects.js";
+import projects from "@/data/content/projects.js";
+import { kebabCase, kebabArray } from "@/utils/utils.js";
+import Projects from "components/projects/Projects.jsx";
+import Heading from "components/projects/Heading.jsx";
 import Link from "next/link";
 
 export async function getStaticPaths() {

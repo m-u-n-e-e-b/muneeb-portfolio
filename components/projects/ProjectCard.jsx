@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { kebabCase } from "@/utils/utils";
+import { kebabCase } from "@/utils/utils.js";
 import Link from "next/link";
 
 function ProjectCard({ project }) {

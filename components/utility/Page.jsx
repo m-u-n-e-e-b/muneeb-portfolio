@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import Navbar from "../global/Navbar";
-import MobileNavbar from "../global/MobileNavbar";
-import Footer from "../global/Footer";
+import Navbar from "../global/Navbar.jsx";
+import MobileNavbar from "../global/MobileNavbar.jsx";
+import Footer from "../global/Footer.jsx";
 
 /**
  * @param {Object} props

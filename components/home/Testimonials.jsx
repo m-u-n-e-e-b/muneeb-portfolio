@@ -1,6 +1,6 @@
 import React from "react";
-import SectionTitle from "../global/SectionTitle";
-import { testimonials } from "@/data/content/home";
+import SectionTitle from "../global/SectionTitle.jsx";
+import { testimonials } from "@/data/content/home.js";
 
 function Testimonials() {
   return (

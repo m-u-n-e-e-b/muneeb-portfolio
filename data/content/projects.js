@@ -1,4 +1,4 @@
-import { kebabCase } from "@/utils/utils";
+import { kebabCase } from "@/utils/utils.js";
 
 const projects = [
   {

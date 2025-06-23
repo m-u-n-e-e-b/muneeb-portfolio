@@ -1,9 +1,9 @@
 import React from "react";
-import projects from "@/data/content/projects";
-import { kebabCase } from "@/utils/utils";
+import projects from "@/data/content/projects.js";
+import { kebabCase } from "@/utils/utils.js";
 import Link from "next/link";
 import Image from "next/image";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "./ProjectCard.jsx";
 
 function Projects({ overwriteProjects }) {
   const projectsList = overwriteProjects ? overwriteProjects : projects;

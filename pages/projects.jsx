@@ -1,7 +1,7 @@
-import Heading from "components/projects/Heading";
-import More from "components/projects/More";
-import Page from "components/utility/Page";
-import Projects from "components/projects/Projects";
+import Heading from "components/projects/Heading.jsx";
+import More from "components/projects/More.jsx";
+import Page from "components/utility/Page.jsx";
+import Projects from "components/projects/Projects.jsx";
 import React from "react";
 
 function projects() {
